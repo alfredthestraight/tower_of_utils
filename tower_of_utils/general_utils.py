@@ -1,4 +1,11 @@
+import pandas as pd
 import itertools
+
+
+def dir_(obj, substring: str = '') -> pd.DataFrame:
+    """List attributes/methods of an object filtered by substring, returned as a numpy array of names."""
+    returned_values = [x for x in dir(obj) if substring in x]
+    return pd.DataFrame(columns=returned_values).columns.values
 
 
 def flatten_list_of_lists(lst):

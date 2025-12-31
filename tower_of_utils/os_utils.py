@@ -1,7 +1,6 @@
 from pathlib import Path
 import os
 import shutil
-import pandas as pd
 
 from os import listdir
 from os.path import isfile, join
@@ -240,10 +239,6 @@ def create_file(full_file_path: str):
         return -1
 
 
-def dir_(obj, substring: str = '') -> pd.DataFrame:
-    """List attributes/methods of an object filtered by substring, returned as a numpy array of names."""
-    returned_values = [x for x in dir(obj) if substring in x]
-    return pd.DataFrame(columns=returned_values).columns.values
 
 
 def rename_file_or_dir(path_to_file_or_dir: str, new_name: str):
